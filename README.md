@@ -114,17 +114,17 @@ The dataset is fetched directly from the UCI ML Repository using the `ucimlrepo`
 
 **Exploratory Data Analysis:** An age distribution histogram, a sex distribution pie chart, per-feature histograms with KDE curves, and a correlation heatmap were produced to understand data distributions and inter-feature relationships.
 
-![Correlation Matrix](results/charts/chart2_correlation.png)
+![Correlation Matrix](images/chart2_correlation.png)
 
 **Output files:** Three CSV files are saved for downstream use — `cleaned_df.csv` (full encoded DataFrame), `cleaned_X.csv` (feature matrix only), and `clean_y.csv` (target vector).
 
-![Exploratory Data Analysis](results/charts/chart1_eda.png)
+![Exploratory Data Analysis](images/chart1_eda.png)
 
 ### 2. PCA Analysis (`02_pca_analysis.ipynb`)
 
 PCA is applied after StandardScaler normalization. The number of components is chosen to retain 95% of total variance (`n_components=0.95`). Two visualizations are produced: a 2D scatter plot of the first two principal components colored by target label, and a cumulative explained variance curve showing the trade-off between the number of components and variance retained.
 
-![PCA Analysis](results/charts/chart4_pca.png)
+![PCA Analysis](images/chart4_pca.png)
 
 ### 3. Feature Selection (`03_feature_selection.ipynb`)
 
@@ -136,7 +136,7 @@ Three complementary feature selection approaches are applied to the cleaned data
 
 **Chi-Square selection:** `SelectKBest` with `chi2` is applied to the full (unscaled) feature set. The top five features by chi-square score are `thalach` (187.05), `ca` (82.73), `oldpeak` (68.57), `thal_7.0` (42.75), and `cp_4` (39.85). Results are consistent with ensemble-based rankings, with `thalach` and `ca` appearing prominently across all three methods.
 
-![Feature Selection](results/charts/chart3_feature_selection.png)
+![Feature Selection](images/chart3_feature_selection.png)
 
 ### 4. Supervised Learning (`04_supervised_learning.ipynb`)
 
@@ -151,7 +151,7 @@ All models are trained on the same 80/20 split with StandardScaler normalization
 
 In addition to accuracy, confusion matrix heatmaps and full classification reports (precision, recall, F1-score) are produced for each model. A decision tree visualization and Random Forest / Gradient Boosting feature importance bar charts are also generated with annotated importance values.
 
-![Model Performance](results/charts/chart5_model_performance.png)
+![Model Performance](images/chart5_model_performance.png)
 
 ### 5. Unsupervised Learning (`05_unsupervised_learning.ipynb`)
 
@@ -159,7 +159,7 @@ In addition to accuracy, confusion matrix heatmaps and full classification repor
 
 **Hierarchical Clustering:** Ward linkage is applied to the scaled feature matrix and visualized as a dendrogram. The dendrogram reveals the hierarchical structure of patient groupings and helps corroborate the cluster count suggested by the elbow method.
 
-![Clustering Analysis](results/charts/chart6_clustering.png)
+![Clustering Analysis](images/chart6_clustering.png)
 
 ### 6. Hyperparameter Tuning (`06_hyperparameter_tuning.ipynb`)
 
